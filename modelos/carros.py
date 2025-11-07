@@ -6,12 +6,14 @@ def adicionar_carro():
         Veiculo = input('Digite o veiculo: ')
         Marca = input('Digite a Marca: ')
         Ano = input('Digite o ano do veiculo: ')
+        Descricao = input('Oque foi feito?: ')
 
         carro ={
             "Proprietario": Nome_Dono,
             "Veiculo": Veiculo,
             "Marca": Marca,
-            "Ano": Ano
+            "Ano": Ano,
+            "Serviço": Descricao
         }
 
         dados_veiculos.append(carro)
@@ -29,7 +31,7 @@ def remover_carro():
 
     print("\nClientes encontrados:")
     for i, c in enumerate(encontrados, start=1):
-        print(f"{i} - Nome: {c['Proprietario']} | Veiculo: {c['Veiculo']} | Marca: {c['Marca']} | Marca: {c['Ano']}")
+        print(f"{i} - Nome: {c['Proprietario']} | Veiculo: {c['Veiculo']} | Marca: {c['Marca']} | Ano: {c['Ano']}")
 
     try:
         escolha = int(input("\nDigite o número do cliente que deseja remover: "))
@@ -39,3 +41,19 @@ def remover_carro():
             print(f"✅ Veiculo '{veiculo_removido['Veiculo']}' removido com sucesso!")
     except ValueError:
         print("⚠️ Digite um número válido.")
+
+def listar_carros():
+    veiculo = input("Digite o nome do veículo ou proprietário que deseja listar: ").upper()
+
+    carros_encontrados = [
+        carro for carro in dados_veiculos
+        if veiculo in carro["Veiculo"].upper() or veiculo in carro["Proprietario"].upper()
+    ]
+
+    if not carros_encontrados:
+        print("❌ Nenhum veículo encontrado com esse nome ou proprietário.")
+        return
+
+    print("\n🚗 Veículos encontrados:")
+    for i, c in enumerate(carros_encontrados, start=1):
+        print(f"{i} - Proprietário: {c['Proprietario']} | Veículo: {c['Veiculo']} | Marca: {c['Marca']} | Ano: {c['Ano']} | Descrição: {c['Serviço']}")

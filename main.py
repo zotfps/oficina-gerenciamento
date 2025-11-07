@@ -1,11 +1,11 @@
 from modelos.clientes import salvar_clientes, remover_cliente
-from modelos.carros import adicionar_carro, remover_carro
+from modelos.carros import adicionar_carro, remover_carro, listar_carros
 
 def menu():
  print("""
 1 - Adicionar carro
 2 - Listar carros
-3 - Buscar carro
+3 - Atualizar Serviço
 4 - Remover carro
       
 5 - Adicionar Cliente
@@ -21,7 +21,8 @@ while True:
         adicionar_carro()
         input("\nPressione ENTER para voltar ao menu...")
     if opcao_selecionada == '2':
-        pass
+        listar_carros()
+        input("\nPressione ENTER para voltar ao menu...")
     if opcao_selecionada == '3':
         pass
     if opcao_selecionada == '4':
