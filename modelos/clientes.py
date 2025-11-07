@@ -4,9 +4,11 @@ def salvar_clientes():
     try:
         nome_cliente = input("Digite o nome do cliente: ")
         cpf_cliente = input("Digite o CPF do cliente: ")
-
-
-        cliente = {
+        if nome_cliente == "" or cpf_cliente == "":
+            print("Algum espaço ficou vazio!")
+            return
+        else:
+            cliente = {
             "nome": nome_cliente.upper(),
             "cpf": cpf_cliente
         }
@@ -17,6 +19,9 @@ def salvar_clientes():
 
 def remover_cliente():
     nome = input("Digite o nome do cliente para remover: ").upper()
+    if nome == "":
+        print("Invalido")
+        return
     encontrados = [c for c in dados_clientes if c["nome"] == nome]
 
     if not encontrados:

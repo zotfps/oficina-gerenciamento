@@ -1,5 +1,5 @@
 from modelos.clientes import salvar_clientes, remover_cliente
-from modelos.carros import adicionar_carro
+from modelos.carros import adicionar_carro, remover_carro
 
 def menu():
  print("""
@@ -18,13 +18,15 @@ while True:
     opcao_selecionada = input("Digite a opção: ")
 
     if opcao_selecionada == '1':
-        pass
+        adicionar_carro()
+        input("\nPressione ENTER para voltar ao menu...")
     if opcao_selecionada == '2':
         pass
     if opcao_selecionada == '3':
         pass
     if opcao_selecionada == '4':
-        pass
+        remover_carro()
+        input("\nPressione ENTER para voltar ao menu...")
     if opcao_selecionada == '5':
         salvar_clientes()
         input("\nPressione ENTER para voltar ao menu...")
@@ -38,5 +40,3 @@ while True:
     if opcao_selecionada == '9':
         print("Saindo...")
         break
-    else:
-        print("Opção inválida!")
