@@ -32,14 +32,14 @@ O foco deste projeto é fornecer uma ferramenta simples, funcional e fácil de u
 
 ## 📂 Estrutura do Projeto
 
-oficina-gerenciamento/
+```oficina-gerenciamento/
 ├── main.py
 ├── modules/
 │ ├── clientes.py
 │ ├── veiculos.py
 │ └── servicos.py
 └── README.md
-
+```
 
 *(A estrutura acima é apenas um modelo — personalize de acordo com seus arquivos reais.)*
 
